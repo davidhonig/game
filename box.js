@@ -10,6 +10,19 @@ class Box {
         World.add(world, this.body);
     } 
 
+    isInvalid() {
+        if (this.body.position.x < -20) {
+            return true;
+        }
+        if (this.body.position.x > width +20) {
+            return true;
+        }
+        if (this.body.position.y > height) {
+            return true;
+        }
+        return false;
+    };
+
     show() {
         let pos = this.body.position;
         let angle = this.body.angle;
