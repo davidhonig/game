@@ -21,18 +21,15 @@ function setup() {
 
 function draw() {
   background(51);
-  ground.show();
-  console.log(boxes.length);
+  ground.show();git 
   for (let i = 0; i < boxes.length; i++) {
     boxes[i].show();
   }
   for (let i = boxes.length - 1; i > 0; i--) {
-    console.log(boxes.length);
     if (boxes[i].isInvalid()) {
       World.remove(world,boxes[i]);
-      boxes.slice(i);
+      boxes.splice(i,1);
       console.log("removing box nr" + i)
-      console.log(boxes.length);
     };
   }
 }
